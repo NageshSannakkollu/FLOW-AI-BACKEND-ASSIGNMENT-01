@@ -146,7 +146,7 @@ app.post("/transactions",async(request,response) => {
 //All transactions details
 
 app.get("/transactions",async(request,response) => {
-    const getAllTransactionQuery = `SELECT * FROM  transactions order_by=${id}`;
+    const getAllTransactionQuery = `SELECT * FROM  transactions`;
     const allTransResponse = await database.all(getAllTransactionQuery);
     response.send(allTransResponse);
 })
@@ -162,7 +162,7 @@ app.get("/transactions/:id",async(request,response) => {
     response.send(transResponse);
 })
 
-//Update user details 
+//Update transaction details 
 
 app.put("/transactions/:id",async(request,response) => {
     const {id} = request.params;
@@ -190,11 +190,11 @@ app.put("/transactions/:id",async(request,response) => {
     }
 })
 
-//DELETE USER 
+//DELETE transaction
 
 app.delete("/transactions/:id",async(request,response) => {
     const {id} = request.params;
-    const getDeleteTransactionQuery = `SELECT * FROM user WHERE id=${id}`;
+    const getDeleteTransactionQuery = `SELECT * FROM transactions WHERE id=${id}`;
     if(getDeleteTransactionQuery === undefined){
         response.status(401);
         response.send(`Invalid Transaction ID: ${id}`)

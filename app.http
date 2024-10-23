@@ -31,7 +31,7 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:3004
+GET http://localhost:3004/transactions
 ###
 GET http://localhost:3004/transactions/3
 Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibmFnZXNoIiwiaWF0IjoxNzI5NTAyODU1fQ.RgCDugYwOQ0A5ivvSaFRegOXJcYxD_i666I76ZAvFzc
@@ -43,14 +43,15 @@ Authorization: earer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibmFnZXNoIi
 Content-Type: application/json 
 
 {
-    "username":"Sanjay",
-    "password":"sanjay@2024",
-    "phoneNumber":9876549874,
-    "address":"Bangalore"
+    "type":"expense",
+    "category":"Repairs",
+    "amount":3000,
+    "date":"2021-02-02",
+    "descritpion":"Laptop repair"
 }
 
 ### 
-DELETE http://localhost:3004/users/1
+DELETE http://localhost:3004/transactions/14
 Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibmFnZXNoIiwiaWF0IjoxNzI5NTAyODU1fQ.RgCDugYwOQ0A5ivvSaFRegOXJcYxD_i666I76ZAvFzc
 
 ###
