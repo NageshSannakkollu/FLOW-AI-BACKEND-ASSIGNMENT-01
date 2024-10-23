@@ -1,0 +1,58 @@
+POST http://localhost:3004/users
+Content-Type: application/json 
+
+{
+    "username":"nagesh",
+    "password":"nagesh@2024",
+    "phoneNumber":9876543210,
+    "address":"Hyderabad"
+}
+
+###
+POST http://localhost:3004/login 
+Content-Type: application/json 
+
+{
+    "username":"nagesh",
+    "password":"nagesh@2024"
+}
+
+###
+POST http://localhost:3004/transactions 
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibmFnZXNoIiwiaWF0IjoxNzI5NTAyODU1fQ.RgCDugYwOQ0A5ivvSaFRegOXJcYxD_i666I76ZAvFzc
+Content-Type: application/json
+
+{
+    "type":"Public transportation",
+    "category":"expense",
+    "amount":1500,
+    "date":"2021-02-01",
+    "description":"public transportation"
+}
+
+###
+GET http://localhost:3004
+###
+GET http://localhost:3004/transactions/3
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibmFnZXNoIiwiaWF0IjoxNzI5NTAyODU1fQ.RgCDugYwOQ0A5ivvSaFRegOXJcYxD_i666I76ZAvFzc
+
+
+###
+PUT http://localhost:3004/transactions/3 
+Authorization: earer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibmFnZXNoIiwiaWF0IjoxNzI5NTAyODU1fQ.RgCDugYwOQ0A5ivvSaFRegOXJcYxD_i666I76ZAvFzc
+Content-Type: application/json 
+
+{
+    "username":"Sanjay",
+    "password":"sanjay@2024",
+    "phoneNumber":9876549874,
+    "address":"Bangalore"
+}
+
+### 
+DELETE http://localhost:3004/users/1
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibmFnZXNoIiwiaWF0IjoxNzI5NTAyODU1fQ.RgCDugYwOQ0A5ivvSaFRegOXJcYxD_i666I76ZAvFzc
+
+###
+GET http://localhost:3004/summary
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibmFnZXNoIiwiaWF0IjoxNzI5NTAyODU1fQ.RgCDugYwOQ0A5ivvSaFRegOXJcYxD_i666I76ZAvFzc
